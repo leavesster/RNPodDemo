@@ -36,6 +36,7 @@
 		2DCD954D1E0B4F2C00145EB5 /* RNPodDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* RNPodDemoTests.m */; };
 		39ADAF611FF7AD80000A71A8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39ADAF5F1FF7AD80000A71A8 /* ViewController.m */; };
 		39ADAF621FF7AD80000A71A8 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39ADAF601FF7AD80000A71A8 /* ViewController.xib */; };
+		39ADAF801FF7BFE0000A71A8 /* JSManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 39ADAF7F1FF7BFE0000A71A8 /* JSManager.m */; };
 		46ED9C084E5640C0180754AD /* libPods-RNPodDemo-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 64825679A9152C6652170D07 /* libPods-RNPodDemo-tvOSTests.a */; };
 		58FD87F5C419C1E60782F8A6 /* libPods-RNPodDemo-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 017108F6B542773C55C2CC35 /* libPods-RNPodDemo-tvOS.a */; };
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
@@ -293,6 +294,8 @@
 		39ADAF5E1FF7AD80000A71A8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = RNPodDemo/ViewController.h; sourceTree = "<group>"; };
 		39ADAF5F1FF7AD80000A71A8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = RNPodDemo/ViewController.m; sourceTree = "<group>"; };
 		39ADAF601FF7AD80000A71A8 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ViewController.xib; path = RNPodDemo/ViewController.xib; sourceTree = "<group>"; };
+		39ADAF7E1FF7BFE0000A71A8 /* JSManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JSManager.h; path = RNPodDemo/JSManager.h; sourceTree = "<group>"; };
+		39ADAF7F1FF7BFE0000A71A8 /* JSManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = JSManager.m; path = RNPodDemo/JSManager.m; sourceTree = "<group>"; };
 		48EC0980E07C8A82403EB71B /* Pods-RNPodDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNPodDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RNPodDemoTests/Pods-RNPodDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		4BCDDB854E16CB2E4A4BE4FE /* Pods-RNPodDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNPodDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RNPodDemo/Pods-RNPodDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
@@ -454,6 +457,8 @@
 				39ADAF5E1FF7AD80000A71A8 /* ViewController.h */,
 				39ADAF5F1FF7AD80000A71A8 /* ViewController.m */,
 				39ADAF601FF7AD80000A71A8 /* ViewController.xib */,
+				39ADAF7E1FF7BFE0000A71A8 /* JSManager.h */,
+				39ADAF7F1FF7BFE0000A71A8 /* JSManager.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
@@ -1245,6 +1250,7 @@
 			files = (
 				39ADAF611FF7AD80000A71A8 /* ViewController.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				39ADAF801FF7BFE0000A71A8 /* JSManager.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,8 +9,10 @@ import {
   Platform,
   StyleSheet,
   Text,
-  View
+  View,
+  NativeModules
 } from 'react-native';
+const JSManager = NativeModules.JSManager;
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -20,6 +22,26 @@ const instructions = Platform.select({
 });
 
 export default class App extends Component<{}> {
+
+  componentDidMount(){
+    JSManager.sayHello('K', 'words');
+    JSManager.returnFunction((err, result) =>{
+      console.log('returnFunction');
+      if (err) {
+        console.log(err);
+      } else {
+        console.log(result);
+      }
+    });
+    JSManager.findEvents().then(result => {
+      console.log('promise');
+      console.log(result);
+    }).catch(err => {
+      console.log('promise');
+      console.log(err);
+    })
+  }
+
   render() {
     return (
       <View style={styles.container}>
