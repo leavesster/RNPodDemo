@@ -10,9 +10,12 @@ import {
   StyleSheet,
   Text,
   View,
-  NativeModules
+  NativeModules,
+  NativeEventEmitter
 } from 'react-native';
 const JSManager = NativeModules.JSManager;
+const {JSEventEmitter} = NativeModules;
+const JSManagerEmitter = new NativeEventEmitter(JSEventEmitter)
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -40,6 +43,10 @@ export default class App extends Component<{}> {
       console.log('promise');
       console.log(err);
     })
+    const subscription = JSManagerEmitter.addListener(
+      'EventReminder',
+      (reminder) => console.log(reminder)
+    );
   }
 
   render() {
