@@ -19,7 +19,7 @@ RCT_EXPORT_METHOD(sayHello:(NSString *)name words:(NSString *)words)
 
 RCT_EXPORT_METHOD(returnFunction:(RCTResponseSenderBlock)callback)
 {
-  NSArray *events = @[@1,@2,@3];
+  NSArray *events = @[@"RCTResponseSenderBlock"];
   callback(@[[NSNull null], events]);
 }
 
@@ -27,7 +27,7 @@ RCT_REMAP_METHOD(findEvents,
                  resolver:(RCTPromiseResolveBlock)resolve
                  rejecter:(RCTPromiseRejectBlock)reject)
 {
-  NSArray *events = @[@3,@2,@1];
+  NSArray *events = @[@"findEvents",@"RCTPromiseResolveBlock",@"RCTPromiseRejectBlock"];
   if (events) {
     resolve(events);
   } else {
