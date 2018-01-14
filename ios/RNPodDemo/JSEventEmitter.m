@@ -8,20 +8,45 @@
 
 #import "JSEventEmitter.h"
 
+@interface JSEventEmitter()
+
+@property (nonatomic, assign) BOOL hasListener;
+
+@end
+
 @implementation JSEventEmitter
 
 RCT_EXPORT_MODULE();
 
 - (NSArray<NSString *> *)supportedEvents
 {
-  return @[@"EventReminder"];
+  return @[JSEventTestEvent, JSEventLogEvent];
 }
 
-- (void)calendarEventReminderReceived:(NSNotification *)notification
+- (void)handleNotificationEvent:(NSNotification *)n
 {
-  NSString *eventName = notification.userInfo[@"name"];
-  [self sendEventWithName:@"EventReminder" body:@{@"name": eventName}];
+  if (self.hasListener) {
+      [self sendEventWithName:n.name body:n.userInfo];
+  }
 }
 
+- (void)startObserving {
+  self.hasListener = YES;
+  for (NSString *event in [self supportedEvents]) {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNotificationEvent:) name:event object:nil];
+  }
+}
+
+- (void)stopObserving {
+  self.hasListener = NO;
+  for (NSString *event in [self supportedEvents]) {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:event object:nil];
+  }
+}
+
++ (void)senderEvent:(NSString *)eventName userInfo:(NSDictionary *)userInfo
+{
+  [[NSNotificationCenter defaultCenter] postNotificationName:eventName object:self userInfo:userInfo];
+}
 
 @end

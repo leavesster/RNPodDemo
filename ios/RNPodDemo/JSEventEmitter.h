@@ -9,6 +9,11 @@
 #import <React/RCTBridgeModule.h>
 #import <React/RCTEventEmitter.h>
 
+static NSString *const JSEventTestEvent = @"EventReminder";
+static NSString *const JSEventLogEvent = @"EventLog";
+
 @interface JSEventEmitter : RCTEventEmitter<RCTBridgeModule>
+
++ (void)senderEvent:(NSString *)eventName userInfo:(NSDictionary *)userInfo;
 
 @end
