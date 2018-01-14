@@ -43,10 +43,18 @@ export default class App extends Component<{}> {
       console.log('promise');
       console.log(err);
     })
-    const subscription = JSManagerEmitter.addListener(
+    this.subscription = JSManagerEmitter.addListener(
       'EventReminder',
-      (reminder) => console.log(reminder)
+      (reminder) => {console.log(reminder, this)},
     );
+    this.testScription = JSManagerEmitter.addListener(
+      "EventLog",(userinfo) => console.log(userinfo)
+    );
+  }
+
+  componentWillUnmount(){
+    this.subscription.remove();
+    this.testScription.remove();
   }
 
   render() {
